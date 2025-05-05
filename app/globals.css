@@ -1,26 +1,53 @@
-@import "tailwindcss";
+@import "tailwindcss" layer(base);
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Font variables */
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-libre);
+  --font-mono: var(--font-mono);
+
+  /* Color variables (RGB format) */
+  --color-primary: 37 99 235;
+  --color-dark: 31 41 55;
+  --color-light: 107 114 128;
+  --color-mint: oklch(0.72 0.11 178);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.text-dark {
+  color: rgb(var(--color-dark));
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.text-light {
+  color: rgb(var(--color-light));
+}
+
+@layer base {
+  html {
+    @apply font-sans scroll-smooth;
+  }
+
+  h1,
+  h2,
+  h4,
+  h5,
+  h6 {
+    @apply text-dark; /* Now properly mapped */
+  }
+
+  code,
+  kbd,
+  samp,
+  pre {
+    @apply font-mono;
+  }
+
+  body {
+    @apply antialiased text-dark; /* Will now work */
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 }
