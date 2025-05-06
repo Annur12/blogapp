@@ -1,4 +1,3 @@
-import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import AboutTour from "@/components/AboutTour";
 import Tour from "@/components/Tour";

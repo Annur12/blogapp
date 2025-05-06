@@ -1,13 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import {
-  FaFacebook,
-  FaTwitter,
-  FaInstagram,
-  FaMapMarkerAlt,
-  FaPhone,
-  FaEnvelope,
-} from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (

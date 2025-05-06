@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import {
   Inter,
   Libre_Baskerville,
