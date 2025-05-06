@@ -1,3 +1,4 @@
+import { itineraries } from "@/data";
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoIosPeople } from "react-icons/io";
@@ -6,9 +7,7 @@ const AboutTour = () => {
   return (
     <section id="about" className="pt-30 pb-20">
       <div className="max-w-6xl mx-auto">
-        {/* Grid container for 2 columns */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Left column (About This Tour) - Takes 1/3 width on LG screens */}
           <div className="col-span-1">
             <h3 className="font-serif font-bold text-blue-600 text-md p-4">
               About This Tour
@@ -41,71 +40,30 @@ const AboutTour = () => {
             </div>
           </div>
 
-          {/* Right column (Itinerary) - Takes 2/3 width on LG screens */}
           <div className="col-span-1">
             <h3 className="font-serif font-bold text-blue-600 text-md p-4">
               Itinerary
             </h3>
             <div className="">
-              <div className="p-5 hover:bg-gray-50 transition-colors cursor-pointer flex items-start">
-                <div className="bg-blue-100 text-blue-800 rounded-lg p-2 mr-4 text-center min-w-12">
-                  <div className="font-bold text-lg">1</div>
-                  <div className="text-xs">Day</div>
+              {itineraries.map((item) => (
+                <div
+                  key={item.day}
+                  className="p-5 hover:bg-gray-50 transition-colors cursor-pointer flex items-start"
+                >
+                  <div className="bg-blue-100 text-blue-800 rounded-lg p-2 mr-4 text-center min-w-12">
+                    <div className="font-bold text-lg">{item.day}</div>
+                    <div className="text-xs">Day</div>
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-primary-800">
+                      {item.title}
+                    </h4>
+                    <p className="text-sm text-gray-600 mt-1">
+                      {item.locations}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-medium text-primary-800">
-                    Manila Heritage
-                  </h4>
-                  <p className="text-sm text-gray-600 mt-1">
-                    Rizal Monument, Fort Santiago, MOA
-                  </p>
-                </div>
-              </div>
-
-              <div className="p-5 hover:bg-gray-50 transition-colors cursor-pointer flex items-start">
-                <div className="bg-blue-100 text-blue-800 rounded-lg p-2 mr-4 text-center min-w-12">
-                  <div className="font-bold text-lg">1</div>
-                  <div className="text-xs">Day</div>
-                </div>
-                <div>
-                  <h4 className="font-medium text-primary-800">
-                    Manila Heritage
-                  </h4>
-                  <p className="text-sm text-gray-600 mt-1">
-                    Rizal Monument, Fort Santiago, MOA
-                  </p>
-                </div>
-              </div>
-
-              <div className="p-5 hover:bg-gray-50 transition-colors cursor-pointer flex items-start">
-                <div className="bg-blue-100 text-blue-800 rounded-lg p-2 mr-4 text-center min-w-12">
-                  <div className="font-bold text-lg">1</div>
-                  <div className="text-xs">Day</div>
-                </div>
-                <div>
-                  <h4 className="font-medium text-primary-800">
-                    Manila Heritage
-                  </h4>
-                  <p className="text-sm text-gray-600 mt-1">
-                    Rizal Monument, Fort Santiago, MOA
-                  </p>
-                </div>
-              </div>
-
-              <div className="p-5 hover:bg-gray-50 transition-colors cursor-pointer flex items-start">
-                <div className="bg-blue-100 text-blue-800 rounded-lg p-2 mr-4 text-center min-w-12">
-                  <div className="font-bold text-lg">1</div>
-                  <div className="text-xs">Day</div>
-                </div>
-                <div>
-                  <h4 className="font-medium text-primary-800">
-                    Manila Heritage
-                  </h4>
-                  <p className="text-sm text-gray-600 mt-1">
-                    Rizal Monument, Fort Santiago, MOA
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>

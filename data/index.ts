@@ -17,6 +17,34 @@ export const navLinks = [
   },
 ];
 
+export const itineraries = [
+  {
+    day: "1",
+    title: "Manila Heritage",
+    locations: "Rizal Monument, Fort Santiago, MOA",
+  },
+  {
+    day: "2",
+    title: "Subic Exploration",
+    locations: "Freeport Zone, US Naval Base",
+  },
+  {
+    day: "3",
+    title: "Museum & Government Tour",
+    locations: "National Museum, Quezon Memorial, Presidential Car Museum",
+  },
+  {
+    day: "4",
+    title: "Financial & Technology Centers",
+    locations: "Bangko Sentral ng Pilipinas, Hytech Technology Center",
+  },
+  {
+    day: "5",
+    title: "Transportation & Urban Management",
+    locations: "LRT Line 2 Center, Metropolitan Manila Development Authority",
+  },
+];
+
 export const tourDays = [
   {
     day: "1",
