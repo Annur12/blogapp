@@ -1,19 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
-
+import { Metadata } from "next";
 import { IoIosArrowRoundForward } from "react-icons/io";
 
-interface Tour {
-  day: string;
-  date: string;
-  location: string;
-  title: string;
-  description: string;
-  image: string;
+interface PageProps {
+  params: {
+    id: string;
+  };
+  searchParams?: Record<string, string | string[] | undefined>;
 }
 
-interface CardProps {
-  days: Tour[];
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  return {
+    title: `Day ${params.id} Details`,
+  };
 }
 
 const Card = ({ days }: CardProps) => {

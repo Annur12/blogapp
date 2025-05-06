@@ -6,16 +6,8 @@ import { TbBuildingFortress } from "react-icons/tb";
 import { FaShoppingCart } from "react-icons/fa";
 import { IoIosArrowRoundForward, IoIosArrowRoundBack } from "react-icons/io";
 
-// Or even simpler:
-interface Props {
-  params: {
-    id: string;
-  };
-}
-
-const TourDetail = ({ params }: Props) => {
-  const { id } = params;
-  const currentIndex = tourDays.findIndex((t) => t.day === id);
+export default function TourDetail({ params }) {
+  const currentIndex = tourDays.findIndex((t) => t.day === params.id);
   const tour = tourDays[currentIndex];
   const nextTour = tourDays[currentIndex + 1];
   const prevTour = tourDays[currentIndex - 1];
@@ -29,9 +21,8 @@ const TourDetail = ({ params }: Props) => {
   }
 
   return (
-    <section id="entries" className="pt-30 pb-20  px-4 sm:px-6">
+    <section id="entries" className="pt-30 pb-20 px-4 sm:px-6">
       <div className="max-w-4xl mx-auto">
-        {/* Main Content */}
         <div className="mb-6 md:mb-8 overflow-hidden rounded-xl shadow-lg">
           <div className="relative h-64 sm:h-80 md:h-96 w-full">
             <Image
@@ -118,7 +109,6 @@ const TourDetail = ({ params }: Props) => {
             </div>
           )}
 
-          {/* Bottom Navigation */}
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-12 pt-6 border-t border-gray-200">
             <div>
               {prevTour && (
@@ -163,6 +153,4 @@ const TourDetail = ({ params }: Props) => {
       </div>
     </section>
   );
-};
-
-export default TourDetail;
+}
