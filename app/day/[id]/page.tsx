@@ -6,13 +6,14 @@ import { TbBuildingFortress } from "react-icons/tb";
 import { FaShoppingCart } from "react-icons/fa";
 import { IoIosArrowRoundForward, IoIosArrowRoundBack } from "react-icons/io";
 
-type PageProps = {
+// Or even simpler:
+interface Props {
   params: {
     id: string;
   };
-};
+}
 
-const TourDetail = ({ params }: PageProps) => {
+const TourDetail = ({ params }: Props) => {
   const { id } = params;
   const currentIndex = tourDays.findIndex((t) => t.day === id);
   const tour = tourDays[currentIndex];
